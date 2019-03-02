@@ -3,7 +3,7 @@ public class Encoder {
     public String encode(String text, String key) {
         String input = createInput(text, key);
         String shifted, added;
-        int repeatTimes = 3;
+        int repeatTimes = 2;
         for (int i = 0; i < repeatTimes; i++) {
             shifted = shift(input, key.length());
             added = add(shifted, key);
@@ -18,19 +18,8 @@ public class Encoder {
 
     private String shift(String input, int keyLength) {
         int shiftLength = keyLength - 1;
-        int inputLength = input.length();
-
-        String[] inputCharacterList = input.split("");
-        String[] shiftedCharacterList = new String[inputLength];
-
-        for (int inputIndex = 0; inputIndex < inputLength; inputIndex++) {
-            int shiftedIndex = inputIndex + shiftLength;
-            while (shiftedIndex >= inputLength) {
-                shiftedIndex = shiftedIndex - inputLength;
-            }
-            shiftedCharacterList[shiftedIndex] = inputCharacterList[inputIndex];
-        }
-        return String.join("", shiftedCharacterList);
+        int shiftPoint = input.length() - shiftLength;
+        return (input.substring(shiftPoint) + input.substring(0, shiftPoint));
     }
 
     private String add(String shifted, String key) {
