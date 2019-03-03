@@ -3,11 +3,10 @@ public class Main {
         Encoder encoder = new Encoder();
         Decoder decoder = new Decoder();
         String encoded = encoder.encode("1234", "223");
-        String decoded1 = decoder.DecodeOneTime(encoded, 3);
-        String decoded2 = decoder.DecodeOneTime(decoded1, 3);
         System.out.println(encoded);
-        System.out.println(decoded1);
-        System.out.println(decoded2);
+        System.out.println(encoded.length());
+        String decoded = decoder.decode(encoded,"223");
+        System.out.println(decoded);
     }
 
 
