@@ -11,6 +11,7 @@ public class Main {
 
         for (int i = 0; i < encodedList.length; i++) {
             String encoded = encodedList[i];
+            System.out.println("---------------");
             System.out.println("encoded: " + encoded);
             for (int j = 0; j < keyList.length; j++) {
                 String key = keyList[j];
@@ -25,7 +26,7 @@ public class Main {
                     }
                 }
             }
-            System.out.println("---------------");
+            System.out.println();
         }
     }
 
