@@ -9,8 +9,7 @@ public class Main {
         };
         String[] keyList = {"kd#%ZG", "fadia8#FADG", "+_(F#@)", "F{D\"||_ }"};
 
-        for (int i = 0; i < encodedList.length; i++) {
-            String encoded = encodedList[i];
+        for (String encoded : encodedList) {
             System.out.println("---------------");
             System.out.println("encoded: " + encoded);
             for (int j = 0; j < keyList.length; j++) {
