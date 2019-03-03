@@ -7,9 +7,9 @@ public class Decoder {
     }
 
     /*
-    * This method is very low-accuracy as is not tested and
-    * can easily by pass :(
-    */
+     * This method is very low-accuracy as is not tested and
+     * can easily by pass :(
+     */
     private boolean isFullyDecoded(String decoded, String key) throws Exception {
         String keyPart = decoded.substring(decoded.length() - key.length());
         boolean isKeyPartMatch = keyPart.equals(key);
@@ -37,15 +37,13 @@ public class Decoder {
     private String deAdd(String added) throws Exception {
         if (added.length() % 2 != 0)
             throw new Exception("This not an Added String");
-
-        String[] addedChars = added.split("");
-        String[] deAddedChars = new String[addedChars.length / 2];
-        for (int i = 0; i < addedChars.length; i++) {
+        char[] deAddedChars = new char[added.length() / 2];
+        for (int i = 0; i < added.length(); i++) {
             if (i % 2 == 0) {
-                deAddedChars[i / 2] = addedChars[i];
+                deAddedChars[i / 2] = added.charAt(i);
             }
         }
-        return String.join("", deAddedChars);
+        return String.copyValueOf(deAddedChars);
     }
 
     private String deShift(String shifted, int keyLength) {
