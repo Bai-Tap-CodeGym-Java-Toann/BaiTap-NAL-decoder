@@ -6,6 +6,10 @@ public class Decoder {
         return input.substring(0, input.length() - key.length());
     }
 
+    /*
+    * This method is very low-accuracy as is not tested and
+    * can easily by pass :(
+    */
     private boolean isFullyDecoded(String decoded, String key) throws Exception {
         String keyPart = decoded.substring(decoded.length() - key.length());
         boolean isKeyPartMatch = keyPart.equals(key);
