@@ -16,21 +16,6 @@ public class Decoder {
         return deShifted;
     }
 
-//    public String getAddedKey(String added) throws Exception {
-//        if (added.length() % 2 != 0)
-//            throw new Exception("This not an Added String");
-//
-//        String[] addedChars = added.split("");
-//        String[] addedKeyChars = new String[addedChars.length / 2];
-//        for (int i = 0; i < addedChars.length; i++) {
-//            if (i % 2 != 0) {
-//                int addedKeyIndex = (int) Math.ceil((float) (i / 2));
-//                addedKeyChars[addedKeyIndex] = addedChars[i];
-//            }
-//        }
-//        return String.join("", addedKeyChars);
-//    }
-
     private String deAdd(String added) throws Exception {
         if (added.length() % 2 != 0)
             throw new Exception("This not an Added String");
